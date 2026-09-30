@@ -4,6 +4,26 @@ A cross-platform command-line tool that helps you quickly install and manage mai
 
 ---
 
+## 🚀 Quick Start (no download required)
+
+No need to clone the repo — just paste one of the commands below into your terminal:
+
+**Windows (PowerShell)**
+
+```powershell
+irm https://raw.githubusercontent.com/italks/ai-cli/main/install-ai-cli.ps1 | iex
+```
+
+**Linux / macOS**
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/italks/ai-cli/main/install-ai-cli.sh)
+```
+
+> If GitHub is slow or timing out, configure a proxy for your terminal first.
+
+---
+
 ## Features
 
 - 🖥️ **Auto OS detection**: Detects the running environment (Windows / macOS / Linux) and CPU architecture on startup

@@ -4,6 +4,26 @@
 
 ---
 
+## 🚀 一键运行（无需下载仓库）
+
+不用 clone 仓库，直接复制下面命令到终端即可运行：
+
+**Windows（PowerShell）**
+
+```powershell
+irm https://raw.githubusercontent.com/italks/ai-cli/main/install-ai-cli.ps1 | iex
+```
+
+**Linux / macOS**
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/italks/ai-cli/main/install-ai-cli.sh)
+```
+
+> 若访问 GitHub 较慢或超时，请先为终端配置代理，再执行上述命令。
+
+---
+
 ## 功能特性
 
 - 🖥️ **自动识别系统**：启动即识别当前运行环境（Windows / macOS / Linux）与 CPU 架构

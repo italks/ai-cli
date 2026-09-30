@@ -68,7 +68,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/italks/ai-cli/main/install-a
 
 Simply double-click `install-ai-cli.bat`.
 
-**Option 2: Command line**
+**Option 2: Command line (PowerShell)**
 
 Run in PowerShell (use `-Encoding UTF8` so Chinese text renders correctly):
 
@@ -76,7 +76,21 @@ Run in PowerShell (use `-Encoding UTF8` so Chinese text renders correctly):
 Get-Content -Raw -Encoding UTF8 .\install-ai-cli.ps1 | Invoke-Expression
 ```
 
-> Note: the script is UTF-8 **without** BOM. Running it via `powershell -File` may decode it with the system default code page on PowerShell 5.1 and garble Chinese text, so prefer `Get-Content -Encoding UTF8` above, or the one-line command at the top.
+**Option 3: Command Prompt (CMD)**
+
+Run in CMD (switch to the UTF-8 code page first to avoid garbled Chinese):
+
+```cmd
+chcp 65001 & powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/italks/ai-cli/main/install-ai-cli.ps1 | iex"
+```
+
+If you already downloaded the script locally, run:
+
+```cmd
+chcp 65001 & powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-Content -Raw -Encoding UTF8 install-ai-cli.ps1 | Invoke-Expression"
+```
+
+> Note: the script is UTF-8 **without** BOM. Running it via `powershell -File` may decode it with the system default code page on PowerShell 5.1 and garble Chinese text, so prefer `Get-Content -Encoding UTF8` above, or the one-line command at the top. In CMD, `chcp 65001` is required because the console code page is not UTF-8 by default.
 
 > Prerequisites:
 > - Windows 10 / 11 ships with PowerShell and `curl.exe`

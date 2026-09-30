@@ -6,7 +6,7 @@ REM  纯 PowerShell 原生实现, 不依赖 Git Bash
 REM ============================================================
 chcp 65001 >nul
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install-ai-cli.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-Content -Raw -Encoding UTF8 '%~dp0install-ai-cli.ps1' | Invoke-Expression"
 
 echo.
 echo ============================================================

@@ -70,13 +70,13 @@ Simply double-click `install-ai-cli.bat`.
 
 **Option 2: Command line**
 
-Run in PowerShell:
+Run in PowerShell (use `-Encoding UTF8` so Chinese text renders correctly):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install-ai-cli.ps1
+Get-Content -Raw -Encoding UTF8 .\install-ai-cli.ps1 | Invoke-Expression
 ```
 
-Or right-click `install-ai-cli.ps1` → "Run with PowerShell".
+> Note: the script is UTF-8 **without** BOM. Running it via `powershell -File` may decode it with the system default code page on PowerShell 5.1 and garble Chinese text, so prefer `Get-Content -Encoding UTF8` above, or the one-line command at the top.
 
 > Prerequisites:
 > - Windows 10 / 11 ships with PowerShell and `curl.exe`

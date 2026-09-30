@@ -70,13 +70,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/italks/ai-cli/main/install-a
 
 **方式二：命令行运行**
 
-在 PowerShell 中执行：
+在 PowerShell 中执行（用 `-Encoding UTF8` 读取以保证中文正常显示）：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install-ai-cli.ps1
+Get-Content -Raw -Encoding UTF8 .\install-ai-cli.ps1 | Invoke-Expression
 ```
 
-或右键 `install-ai-cli.ps1` →「使用 PowerShell 运行」。
+> 说明：脚本为无 BOM 的 UTF-8 编码。若直接用 `powershell -File` 运行，PowerShell 5.1 可能按系统默认编码读取而导致中文乱码，故推荐上述 `Get-Content -Encoding UTF8` 方式，或直接使用一键命令（见文首）。
 
 > 前置要求：
 > - Windows 10 / 11 自带 PowerShell 与 `curl.exe`
